@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap\css\bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header class="header sticky top">
+        <div class="header-container d-flex">
+            <navbar class="header-nav pt-4">
+                <ul class="header-list d-flex">
+                    <li>
+                        <a href="/" class="nav-a m-3">Главная страница</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-a m-3">Каталог</a>
+                    </li>
+                </ul>
+            </navbar>
+            <div class="header-logo">
+                <a href="/"><img src="{% static 'img/logo.png' %}" alt="Лого не загрузилось" class="auto-logo"></a>
+            </div>
+            <div class="header-profile">
+                <a href="#" class="m-3">Вход</a>
+            </div>
+        </div>
+    </header>
+    <div class="conteiner">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    
+
+
+    <script src="{% static 'bootstrap\js\bootstarp.bundle.min.js' %}"></script>
+</body>
+</html>
