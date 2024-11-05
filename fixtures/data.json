@@ -1,0 +1,226 @@
+[
+    {
+        "model": "main.category",
+        "pk": 1,
+        "fields": {
+            "name": "�����",
+            "slug": "nemec"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 2,
+        "fields": {
+            "name": "bmw",
+            "slug": "bmw"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 3,
+        "fields": {
+            "name": "mercedes",
+            "slug": "mercedes"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 4,
+        "fields": {
+            "name": "porsche",
+            "slug": "porsche"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 5,
+        "fields": {
+            "name": "audi",
+            "slug": "audi"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 6,
+        "fields": {
+            "name": "������",
+            "slug": "benzin"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 7,
+        "fields": {
+            "name": "������",
+            "slug": "dizel"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 8,
+        "fields": {
+            "name": "����������",
+            "slug": "elektrichka"
+        }
+    },
+    {
+        "model": "main.cars",
+        "pk": 1,
+        "fields": {
+            "category": 3,
+            "name": "Mercedes-Benz S-����� 580 Long 4MATIC, 2022",
+            "slug": "mercedes-benz-s-klass-580-long-4matic-2022",
+            "image": "cars/2024/11/05/mersedes_s_class_2022.png",
+            "description": "�������� � ��������� �������. �������� ���� ���� � ������.",
+            "price": "20.00",
+            "available": true,
+            "created": "2024-11-05",
+            "updated": "2024-11-05",
+            "discount": "0.00"
+        }
+    },
+    {
+        "model": "main.cars",
+        "pk": 2,
+        "fields": {
+            "category": 3,
+            "name": "Mercedes-Benz V-����� Long 300 d �������, 2022",
+            "slug": "mercedes-benz-v-klass-long-300-d-dlinnyj-2022",
+            "image": "cars/2024/11/05/mersedes_v_class_2022.png",
+            "description": "�������� ������� ��� ��������� �����. �� ��� �� ������ �������� ����� � ��������� ��� ����.",
+            "price": "7.00",
+            "available": true,
+            "created": "2024-11-05",
+            "updated": "2024-11-05",
+            "discount": "0.00"
+        }
+    },
+    {
+        "model": "main.cars",
+        "pk": 3,
+        "fields": {
+            "category": 5,
+            "name": "Audi A4 40 TFSI, 2020",
+            "slug": "audi-a4-40-tfsi-2020",
+            "image": "cars/2024/11/05/audi_2022.png",
+            "description": "�������� ����������.",
+            "price": "3.00",
+            "available": true,
+            "created": "2024-11-05",
+            "updated": "2024-11-05",
+            "discount": "0.00"
+        }
+    },
+    {
+        "model": "main.cars",
+        "pk": 4,
+        "fields": {
+            "category": 2,
+            "name": "BMW 5 ����� 520d, 2020",
+            "slug": "bmw-5-serii-520d-2020",
+            "image": "cars/2024/11/05/bmw_520d_2020.png",
+            "description": "��������� � ������������ ����. �����, ������ ������������, ������� ���� ��� �� ������� �� ��� �������.",
+            "price": "4.00",
+            "available": true,
+            "created": "2024-11-05",
+            "updated": "2024-11-05",
+            "discount": "0.00"
+        }
+    },
+    {
+        "model": "main.cars",
+        "pk": 5,
+        "fields": {
+            "category": 4,
+            "name": "Porsche Cayenne, 2019",
+            "slug": "porsche-cayenne-2019",
+            "image": "cars/2024/11/05/Porsche_Cayenne_2019.png",
+            "description": "�������� ���� ���� ��� ����� ���� � �����.",
+            "price": "6.00",
+            "available": true,
+            "created": "2024-11-05",
+            "updated": "2024-11-05",
+            "discount": "0.00"
+        }
+    },
+    {
+        "model": "main.carspecifications",
+        "pk": 1,
+        "fields": {
+            "car_id": 1,
+            "name": "Mercedes-Benz S-����� 580 Long 4MATIC, 2022",
+            "distance": 100000,
+            "engine_capacity": "4.0",
+            "engine_power": 503,
+            "type_engine": "������",
+            "owners": 1,
+            "pts": "��������",
+            "customs": true,
+            "slug": "mers-2022-s-class"
+        }
+    },
+    {
+        "model": "main.carspecifications",
+        "pk": 2,
+        "fields": {
+            "car_id": 2,
+            "name": "Mercedes-Benz V-����� Long 300 d �������, 2022",
+            "distance": 90000,
+            "engine_capacity": "2.3",
+            "engine_power": 237,
+            "type_engine": "������",
+            "owners": 2,
+            "pts": "����",
+            "customs": true,
+            "slug": "mercedes-benz-v-klass-long-300-d-dlinnyj-2022"
+        }
+    },
+    {
+        "model": "main.carspecifications",
+        "pk": 3,
+        "fields": {
+            "car_id": 3,
+            "name": "Audi A4 40 TFSI, 2020",
+            "distance": 90000,
+            "engine_capacity": "2.0",
+            "engine_power": 190,
+            "type_engine": "������",
+            "owners": 3,
+            "pts": "��������",
+            "customs": true,
+            "slug": "audi-a4-40-tfsi-2020"
+        }
+    },
+    {
+        "model": "main.carspecifications",
+        "pk": 4,
+        "fields": {
+            "car_id": 4,
+            "name": "BMW 5 ����� 520d, 2020",
+            "distance": 60000,
+            "engine_capacity": "2.0",
+            "engine_power": 190,
+            "type_engine": "������",
+            "owners": 1,
+            "pts": "��������",
+            "customs": true,
+            "slug": "bmw-5-serii-520d-2020"
+        }
+    },
+    {
+        "model": "main.carspecifications",
+        "pk": 5,
+        "fields": {
+            "car_id": 5,
+            "name": "Porsche Cayenne, 2019",
+            "distance": 124000,
+            "engine_capacity": "3.0",
+            "engine_power": 340,
+            "type_engine": "������",
+            "owners": 2,
+            "pts": "��������",
+            "customs": true,
+            "slug": "porsche-cayenne-2019"
+        }
+    }
+]
