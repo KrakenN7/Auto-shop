@@ -1,5 +1,3 @@
-![flake8](https://github.com/KrakenN/Auto-shop/.github/workflows/flake8.yml/badge.svg)
-![django](https://github.com/KrakenN/Auto-shop/.github/workflows/django.yml/badge.svg)
 # Auto-shop
 <!-- Добавить бэйджи -->
 
