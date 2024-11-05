@@ -24,10 +24,10 @@ class Category(models.Model):
         return self.name
 
 
-class Product(models.Model):
+class Cars(models.Model):
     category = models.ForeignKey(
         Category,
-        related_name="products",
+        related_name="cars",
         on_delete=models.CASCADE,
     )
     name = models.CharField(
@@ -35,7 +35,7 @@ class Product(models.Model):
     )
     slug = models.SlugField(max_length=50)
     image = models.ImageField(
-        upload_to="products/%Y/%m/%d",
+        upload_to="cars/%Y/%m/%d",
         blank=True,
     )
     description = models.TextField(
@@ -78,3 +78,22 @@ class Product(models.Model):
         if self.discount:
             return round(self.price - self.price * self.discount / 100, 2)
         return self.price
+
+
+class CarSpecifications(models.Model):
+    car_id = models.ForeignKey(
+        Cars,
+        related_name="carspecifications",
+        on_delete=models.CASCADE,
+    )
+    name = models.CharField(max_length=150)
+    distance = models.IntegerField()
+    engine_capacity = models.DecimalField(
+        max_digits=2,
+        decimal_places=2,
+    )
+    engine_power = models.IntegerField()
+    owners = models.IntegerField()
+    pts = models.CharField(max_length=12)
+    customs = models.BooleanField(default=True)
+    slug = models.SlugField(max_length=50)
