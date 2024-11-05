@@ -93,6 +93,10 @@ class CarSpecifications(models.Model):
         decimal_places=2,
     )
     engine_power = models.IntegerField()
+    type_engine = models.CharField(
+        max_length=12,
+        default="бензин",
+    )
     owners = models.IntegerField()
     pts = models.CharField(max_length=12)
     customs = models.BooleanField(default=True)
