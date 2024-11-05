@@ -42,6 +42,12 @@ python3 autoshop/manage.py makemigrations main
 python3 autoshop/manage.py migrate main
 ```
 
+### Создание фикстуры
+
+```bash
+python3 autoshop/manage.py dumpdata --format=json main > fixtures/data.json
+```
+
 ### Запускаем development сервер
 
 ```bash
