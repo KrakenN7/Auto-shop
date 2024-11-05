@@ -80,4 +80,4 @@ python3 autoshop/manage.py test
 
 ## Команда проекта
 
-- [Кирилл]([https://t.me/nkirill_tg) — Back-End Engineer
+- [Кирилл](https://t.me/nkirill_tg)
