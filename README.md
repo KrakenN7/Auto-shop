@@ -1,3 +1,4 @@
+![CI/CD](https://github.com/KrakenN7/Auto-shop/actions/workflows/WORKFLOW-FILE/badge.svg)
 # Auto-shop
 <!-- Добавить бэйджи -->
 
