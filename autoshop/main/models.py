@@ -101,3 +101,14 @@ class CarSpecifications(models.Model):
     pts = models.CharField(max_length=12)
     customs = models.BooleanField(default=True)
     slug = models.SlugField(max_length=50)
+
+    class Meta:
+        ordering = ["name"]
+        indexes = [
+            models.Index(fields=["name"]),
+        ]
+        verbose_name = "Харрактреристика машины"
+        verbose_name_plural = "Харрактреристики машин"
+
+    def __str__(self) -> str:
+        return self.name
