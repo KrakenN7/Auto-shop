@@ -90,7 +90,7 @@ class CarSpecifications(models.Model):
     distance = models.IntegerField()
     engine_capacity = models.DecimalField(
         max_digits=2,
-        decimal_places=2,
+        decimal_places=1,
     )
     engine_power = models.IntegerField()
     type_engine = models.CharField(
