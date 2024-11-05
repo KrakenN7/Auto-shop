@@ -65,8 +65,8 @@ class Cars(models.Model):
             models.Index(fields=["name"]),
             models.Index(fields=["-created"]),
         ]
-        verbose_name = "Товар"
-        verbose_name_plural = "Товары"
+        verbose_name = "Машина"
+        verbose_name_plural = "Машины"
 
     def __str__(self) -> str:
         return self.name
