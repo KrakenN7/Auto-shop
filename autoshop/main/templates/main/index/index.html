@@ -1,0 +1,35 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Главная страница{% endblock  %}
+
+{% block content %}
+    <section class="home d-flex flex-column">
+        <div class="home-title">
+            <a href="#" class="home-btn mt-4">Все машины</a>
+        </div>
+        <div class="home-recomendation">
+            <div class="rec-title">
+                <h3><span>Популярные машины</span></h3>
+            </div>
+        </div>
+        <div class="home-card">
+            {% for car in cars %}
+                <a href="{{ car.get_asolute_url }}" class="home-card">
+                    <img src="{{ car.image.url }}" alt="фото тачки" class="car-img">
+                    <h5 class="title-card">{{ car.name }}</h5>
+                    {% if car.discount %}
+                        <div class="card-discount">
+                            <p class="card-line"></p>
+                            <p class="line">{{ car.price}}</p>
+                            <p>{{ car.sell_price }}</p>
+                        </div>
+                        {% else %}
+                        <p class="product-price">{{ car.price }}</p>
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+        <img src="{% static "img/logo.png" %}" alt="логотип" class="logocar">
+    </section>
+{% endblock content %}section
