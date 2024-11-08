@@ -4,6 +4,10 @@
 {% block title %}Главная страница{% endblock  %}
 
 {% block content %}
+    <div class="intro-car-img">
+        <img src="{% static img/intro.png %}" alt="intro">
+        <img src="{% static "img/logo.png" %}" alt="логотип" class="logocar">
+    </div>
     <section class="home d-flex flex-column">
         <div class="home-title">
             <a href="#" class="home-btn mt-4">Все машины</a>
@@ -30,6 +34,6 @@
                 </a>
             {% endfor %}
         </div>
-        <img src="{% static "img/logo.png" %}" alt="логотип" class="logocar">
+        {% comment %} <img src="{% static "img/logo.png" %}" alt="логотип" class="logocar"> {% endcomment %}
     </section>
 {% endblock content %}section
