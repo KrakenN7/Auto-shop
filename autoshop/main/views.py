@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_list_or_404
-from main.models import Cars
+from django.shortcuts import render, get_object_or_404
+
+from main.models import Cars, CarSpecifications
 
 
 def popular_list(request):
@@ -11,10 +12,17 @@ def popular_list(request):
     )
 
 
-def cars_details(request, slug):
-    car = get_list_or_404(
+def car_details(request, slug):
+    car = get_object_or_404(
         Cars,
         slug=slug,
         available=True,
     )
-    return render(request, "main/car/detail.html", {"car": car})
+    car_specs = CarSpecifications.objects.filter(car_id=car.id)
+
+    context = {
+        "car": car,
+        "car_specs": car_specs,
+    }
+
+    return render(request, "main/car/detail.html", context)

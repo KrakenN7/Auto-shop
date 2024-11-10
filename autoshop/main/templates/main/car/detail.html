@@ -6,22 +6,35 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="detail-car">
-    <img src="{% if car.image %}{{car.image.url}}{% else %}{% static "img/noimage.png" %}{% endif%}" alt="" class="detail-image">
+    <div class="detail-car d-flex">
+    <div class="detail-img">
+        <img src="{% if car.image %}{{ car.image.url }}{% else %}{% static 'img/noimage.png' %}{% endif %}" alt="">
+    </div>
     <div class="detail-description">
         <h2>{{ car.name }}</h2>
-        <h3>Категория: {{ car.name }}</h3>
-        <p>Описание: {{ car.detail-description}}</p>
+
         {% if car.discount %}
-            <div class="card-discount">
-                <p class="card-line"></p>
-                <p class="line">{{ car.price}}</p>
-                <p>{{ car.sell_price }}</p>
-            </div>
+        <div class="card-discount d-flex gap-2">
+            <p class="card-line"></p>
+            <p class="line">Цена: {{ car.price }} ₽</p>
+            <p>{{ car.sell_price }}</p>
+        </div>
         {% else %}
-            <p class="product-price">{{ car.price }}</p>
+        <p class="car-price">Цена: {{ car.price }} ₽</p>
         {% endif %}
-        <a href="#" class="cart-btn">В корзину</a>
+        <p>Категория: {{ car.category }}</p>
+        <p>Описание: {{ car.description|linebreaks }}</p>
+        {% for spec in car_specs %}
+        <p>Пробег: {{ spec.distance }} км</p>
+        <p>Объем двигателя: {{ spec.engine_capacity }} л.</p>
+        <p>Мощность двигателя: {{ spec.engine_power }} л.с.</p>
+        <p>Тип двигателя: {{ spec.type_engine }}</p>
+        <p>Владельцев: {{ spec.owners }}</p>
+        <p>ПТС: {{ spec.pts }}</p>
+        <p>Таможня: {% if spec.customs %}Растоможена{% else %}Не растоможена{% endif %}
+        </p>
+        {% endfor %}
+        <a href="#" class="cart-btn d-flex align-items-centr jusctigy-content-center">В корзину</a>
     </div>
     </div>
 {% endblock content %}
