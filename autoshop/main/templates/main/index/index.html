@@ -4,9 +4,9 @@
 {% block title %}Главная страница{% endblock  %}
 
 {% block content %}
-    <div class="intro-car-img">
+    {% comment %} <div class="intro-car-img">
         <img src="{% static "img/intro.png" %}" alt="логотип" class="logocar">
-    </div>
+    </div> {% endcomment %}
     <section class="home d-flex flex-column">
         <div class="home-title d-flex flex-column align-items-center">
             <a href="#" class="home-btn mt-4">Все машины</a>
@@ -17,21 +17,21 @@
             </div>
         </div>
         <div class="home-card d-flex mb-4">
-            {% for car in cars %}
-                <a href="{{ car.slug }}" class="home-card d-flex flex-column align-items-center text-center">
-                    <img src="{{ car.image.url }}" alt="фото тачки" class="car-img">
-                    <h5 class="title-card">{{ car.name }}</h5>
-                    {% if car.discount %}
-                        <div class="card-discount d-flex gap-2">
-                            <p class="card-line"></p>
-                            <p class="line">{{ car.price}} ₽</p>
-                            <p>{{ car.sell_price }}</p>
-                        </div>
-                        {% else %}
-                        <p class="product-price">{{ car.price }} ₽</p>
-                    {% endif %}
-                </a>
-            {% endfor %}
+                        {% for car in cars %}
+                        <a href="{{ car.slug }}" class="home-card d-flex flex-column align-items-center text-center">
+                            <img src="{{ car.image.url }}" alt="фото тачки" class="car-img">
+                            <h5 class="title-card">{{ car.name }}</h5>
+                            {% if car.discount %}
+                            <div class="card-discount d-flex gap-2">
+                                <p class="card-line"></p>
+                                <p class="line">{{ car.price}} ₽</p>
+                                <p>{{ car.sell_price }}</p>
+                            </div>
+                            {% else %}
+                            <p class="product-price">{{ car.price }} ₽</p>
+                            {% endif %}
+                        </a>
+                        {% endfor %}
         </div>
     </section>
 {% endblock content %}
