@@ -76,7 +76,3 @@ python3 autoshop/manage.py test
 
 - [x] Дописать проект
 - [ ] ...
-
-## Команда проекта
-
-- [Кирилл](https://t.me/nkirill_tg)
