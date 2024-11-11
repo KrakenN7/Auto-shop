@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 
-from main.models import Cars, CarSpecifications
+from main.models import Cars, CarSpecifications, Category
 
 
 def popular_list(request):
@@ -12,7 +12,7 @@ def popular_list(request):
     )
 
 
-def car_details(request, slug):
+def car_detail(request, slug):
     car = get_object_or_404(
         Cars,
         slug=slug,
@@ -25,4 +25,31 @@ def car_details(request, slug):
         "car_specs": car_specs,
     }
 
-    return render(request, "main/car/detail.html", context)
+    return render(
+        request,
+        "main/car/detail.html",
+        context,
+    )
+
+
+def car_list(request, category_slug=None):
+    category = None
+    categories = Category.objects.all()
+    cars = Cars.objects.filter(available=True)
+    if category_slug:
+        category = get_object_or_404(
+            Category,
+            slug=category_slug,
+        )
+        cars = cars.filter(category=category)
+
+    context = {
+        "category": category,
+        "categories": categories,
+        "cars": cars,
+    }
+    return render(
+        request,
+        "main/car/list.html",
+        context,
+    )

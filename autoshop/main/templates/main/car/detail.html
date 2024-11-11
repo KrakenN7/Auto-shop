@@ -12,10 +12,9 @@
     </div>
     <div class="detail-description">
         <h2>{{ car.name }}</h2>
-
         {% if car.discount %}
-        <div class="card-discount d-flex gap-2">
-            <p class="card-line"></p>
+        <div class="cart-discount d-flex gap-2">
+            <p class="cart-line"></p>
             <p class="line">Цена: {{ car.price }} ₽</p>
             <p>{{ car.sell_price }}</p>
         </div>
@@ -34,7 +33,7 @@
         <p>Таможня: {% if spec.customs %}Растоможена{% else %}Не растоможена{% endif %}
         </p>
         {% endfor %}
-        <a href="#" class="cart-btn d-flex align-items-centr jusctigy-content-center">В корзину</a>
+        <a href="#" class="cart-btn d-flex align-items-centr justify-content-center">В корзину</a>
     </div>
     </div>
 {% endblock content %}

@@ -23,6 +23,12 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    def get_absolute_url(self):
+        return reverse(
+            "main:car_list_by_category",
+            args=[self.slug],
+        )
+
 
 class Cars(models.Model):
     category = models.ForeignKey(
@@ -72,7 +78,10 @@ class Cars(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("main:product_detail", args=[self.slug])
+        return reverse(
+            "main:car_detail",
+            args=[self.slug],
+        )
 
     def sell_price(self):
         if self.discount:
