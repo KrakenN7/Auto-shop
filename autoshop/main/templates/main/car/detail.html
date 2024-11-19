@@ -33,7 +33,13 @@
         <p>Таможня: {% if spec.customs %}Растоможена{% else %}Не растоможена{% endif %}
         </p>
         {% endfor %}
-        <a href="#" class="cart-btn d-flex align-items-centr justify-content-center">В корзину</a>
+        <form action="{% url "cart:cart_add" car.id %}" class="qform" method="post">
+            <div class="cart-form">
+                {{ cart-car_form }}
+                {% csrf_token %}
+            </div>
+            <input type="submit" class="add-to-cart-btn" value="В корзину">
+        </form>
     </div>
     </div>
 {% endblock content %}

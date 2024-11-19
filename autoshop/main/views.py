@@ -38,7 +38,7 @@ def car_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
     cars = Cars.objects.filter(available=True)
-    paginator = Paginator(cars, 2)
+    paginator = Paginator(cars, 4)
     current_page = paginator.page(int(page))
 
     if category_slug:
@@ -46,13 +46,13 @@ def car_list(request, category_slug=None):
             Category,
             slug=category_slug,
         )
-        paginator = Paginator(cars.filter(category))
+        paginator = Paginator(cars.filter(category == category), 4)
         current_page = paginator.page(int(page))
 
     context = {
         "category": category,
         "categories": categories,
-        "cars": current_page,
+        "car": current_page,
         "slug_url": category_slug,
     }
     return render(

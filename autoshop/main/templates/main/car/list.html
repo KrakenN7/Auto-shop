@@ -44,7 +44,7 @@
             </div>
             <ul class="pagination">
                 <li class="{% if not cars.has_previous %}disabled {% endif %}">
-                <a href="{% if cars.has_previous%}?page={{cars.previous_page_number}}{% endif %}">Предвидущая страница</a>
+                <a href="{% if cars.has_previous%}?page={{cars.previous_page_number}}{% endif %}"> < </a>
                 </li>
                 {% for page in cars.paginator.page_range %}
                     {% if page >= cars.number|add:-2 and page <= cars.number|add:2 %}
@@ -54,7 +54,7 @@
                     {% endif %}
                 {% endfor %}
                 <li class="{% if not cars.has_next %}disabled {% endif %}">
-                    <a href="{% if cars.has_next %}?page={{cars.next_page_number}}{% endif %}">Следующая страница</a>
+                    <a href="{% if cars.has_next %}?page={{cars.next_page_number}}{% endif %}"> > </a>
                 </li>
             </ul>
         </div> 
