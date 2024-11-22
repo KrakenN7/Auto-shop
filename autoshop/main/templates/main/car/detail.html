@@ -35,7 +35,7 @@
         {% endfor %}
         <form action="{% url "cart:cart_add" car.id %}" class="qform" method="post">
             <div class="cart-form">
-                {{ cart-car_form }}
+                {{ cart_car_form }}
                 {% csrf_token %}
             </div>
             <input type="submit" class="add-to-cart-btn" value="В корзину">

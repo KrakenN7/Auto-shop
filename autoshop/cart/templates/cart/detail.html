@@ -10,7 +10,8 @@
         </div>
         <div class="cart-cards">
             {% for item  in cart %}
-                {% with car-item.car %}
+                {% comment %} {% with car-item.car %} {% endcomment %}
+                {% with car=item.car %}
                 <div class="cart-card d-flex">
                     <div class="cart-card-img">
                         <img src="{% if car.image %}{{ car.image.url}}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="">
