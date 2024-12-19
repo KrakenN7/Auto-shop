@@ -48,7 +48,11 @@
         </div>
         <div class="cart-buttons d-flex gap-3">
             <a href="/shop" class="cart-btn">Продолжить покупки</a>
-            <a href="#" class="cart-btn">Оформить заказ</a>
+            {% with cart_quantity=cart|length %}
+                {% if cart_quantity > 0 %}
+                <a href="{% url "orders:order_create" %}" class="cart-btn">Оформить заказ</a>
+                {% endif %}
+            {% endwith %}
         </div>
     </section>
 {% endblock content %}

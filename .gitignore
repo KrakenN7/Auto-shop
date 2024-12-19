@@ -91,3 +91,5 @@ db.sqlite3
 #Idea
 .vscode/
 .idea/
+# Linting
+# .pylintrc
